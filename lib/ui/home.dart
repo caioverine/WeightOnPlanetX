@@ -44,7 +44,7 @@ class HomeState extends State<Home> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: 'Your Weight on Earth',
-                      hintText: 'In Pounds',
+                      hintText: 'In Kilograms',
                       icon: Icon(Icons.person_outline)
                     )
                   ),
@@ -94,7 +94,7 @@ class HomeState extends State<Home> {
 
                   Padding(padding: EdgeInsets.all(15.6)),
 
-                  Text(_weightController.text.isNotEmpty ? "$_formattedText lbs" : "Plese enter your weight",
+                  Text(_weightController.text.isNotEmpty ? "$_formattedText kg" : "Plese enter your weight",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 19.4,
@@ -118,7 +118,7 @@ class HomeState extends State<Home> {
       
       switch(radioValue) {
         case 0: //Pluto
-          _finalResult = calculateWeight(_weightController.text, 0.06); // 0.06 is value for Pluto
+          _finalResult = calculateWeight(_weightController.text, 0.11); // 0.11 is value for Pluto
           _formattedText = "Your weight on Pluto is ${_finalResult.toStringAsFixed(1)}";
           break;
         case 1: //Mars
@@ -126,7 +126,7 @@ class HomeState extends State<Home> {
           _formattedText = "Your weight on Mars is ${_finalResult.toStringAsFixed(1)}";
           break;
         case 2: //Venus
-          _finalResult = calculateWeight(_weightController.text, 0.91); // 0.91 is value for Venus
+          _finalResult = calculateWeight(_weightController.text, 0.88); // 0.88 is value for Venus
           _formattedText = "Your weight on Venus is ${_finalResult.toStringAsFixed(1)}";
           break;
       }
